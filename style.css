@@ -1,0 +1,250 @@
+/* === Global theme: noir & blanc avec accents jaunes === */
+
+/* Palette */
+:root{
+  --bg: #000000;
+  --panel: #0f1724;
+  --panel-2: #111318;
+  --muted: #9CA3AF;
+  --text: #F8FAFC;
+  --yellow: #FFD60A;
+  --yellow-600: #FFC300;
+}
+
+/* Base */
+html,body{height:100%}
+body{
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(255,214,10,0.03), transparent 10%),
+              linear-gradient(180deg, var(--bg), #030303 60%);
+  color:var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Brand */
+.brand { color:var(--text); }
+.brand .highlight { color:var(--yellow); }
+
+/* Header */
+header{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-bottom: 1px solid rgba(255,214,10,0.08);
+  backdrop-filter: blur(6px);
+}
+
+/* Nav links */
+.nav-link, .nav-link-mobile {
+  color:var(--text);
+  font-weight:500;
+  transition: color .18s ease, transform .12s ease;
+}
+.nav-link:hover, .nav-link-mobile:hover {
+  color: var(--yellow);
+  transform: translateY(-2px);
+}
+
+/* Social buttons */
+.social-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:38px;height:38px;
+  border-radius:10px;
+  background:transparent;
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.03);
+  transition: background .18s ease, transform .12s ease, box-shadow .18s ease;
+}
+.social-btn:hover{
+  background: linear-gradient(90deg, rgba(255,214,10,0.08), rgba(255,214,10,0.03));
+  color:var(--yellow);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+
+/* Primary button (rounded, interactive, glow) */
+.btn-primary{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  padding:.65rem 1rem;
+  border-radius:999px;
+  background: linear-gradient(90deg, var(--yellow), var(--yellow-600));
+  color:#101010;
+  font-weight:600;
+  box-shadow: 0 6px 20px rgba(255,214,10,0.18), inset 0 -6px 12px rgba(0,0,0,0.08);
+  transition: transform .18s ease, box-shadow .18s ease;
+  position:relative;
+  overflow:hidden;
+}
+.btn-primary::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 40%);
+  opacity:0;
+  transition:opacity .28s ease;
+}
+.btn-primary:hover{ transform: translateY(-4px); box-shadow: 0 14px 40px rgba(255,214,10,0.22); }
+.btn-primary:hover::after{ opacity:1; }
+
+/* Outline button */
+.btn-outline{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  padding:.55rem .9rem;
+  border-radius:999px;
+  color:var(--yellow);
+  border:2px solid rgba(255,214,10,0.2);
+  background:transparent;
+  font-weight:600;
+  transition: background .18s ease, color .18s ease, transform .12s ease;
+}
+.btn-outline:hover{
+  background:var(--yellow);
+  color:#060606;
+  transform: translateY(-3px);
+}
+
+/* Mobile outline variant in menu */
+.btn-outline-mobile{
+  display:inline-block;
+  padding:.5rem .8rem;
+  border-radius:.6rem;
+  color:var(--yellow);
+  border:1px solid rgba(255,214,10,0.12);
+}
+
+/* Section style and cards */
+section{
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));
+  border-radius: 12px;
+  margin: 2.5rem auto;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+}
+
+/* Headings */
+h1,h2,h3{ color:var(--yellow); }
+h2{ font-size:1.6rem; border-left:4px solid rgba(255,214,10,0.25); padding-left:12px; color:var(--yellow); }
+
+/* Cards */
+.card, .project-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+  border-radius:10px;
+  padding:1rem;
+  border:1px solid rgba(255,255,255,0.03);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover, .project-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 14px 50px rgba(0,0,0,0.7);
+}
+
+/* Progress bars */
+.progress-bar{
+  background: linear-gradient(90deg, var(--yellow), var(--yellow-600));
+  height:8px;
+  border-radius:999px;
+  width:0%;
+  transition: width 1.4s cubic-bezier(.2,.9,.3,1);
+}
+.bg-gray-800{ background: rgba(255,255,255,0.02) !important; }
+
+/* Form */
+input, textarea{
+  background: rgba(255,255,255,0.02);
+  border-radius:8px;
+  padding:.6rem .75rem;
+  color:var(--text);
+  border:1px solid transparent;
+  transition: box-shadow .15s ease, border .15s ease;
+}
+input:focus, textarea:focus{
+  outline:none;
+  box-shadow: 0 6px 20px rgba(255,214,10,0.08);
+  border:1px solid rgba(255,214,10,0.18);
+}
+
+/* Footer */
+footer{ border-top:1px solid rgba(255,214,10,0.06); }
+
+/* Focus visible */
+:focus-visible{ outline: 3px solid rgba(255,214,10,0.18); outline-offset:3px; }
+
+/* Responsive tweaks */
+@media (max-width: 768px){
+  section{ margin:1rem; padding:1.5rem; }
+  .me-contact-btn{ display:none; } /* hide desktop contact button on small screens (mobile menu provides link) */
+}
+
+/* === Bouton "Me Contacter" interactif === */
+.btn-contact {
+  background: var(--yellow);
+  color: var(--black);
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-contact::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.4s;
+}
+
+.btn-contact:hover::after {
+  left: 100%;
+}
+
+.btn-contact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 214, 10, 0.4);
+}
+
+/* === Technologies section (logos plus grands) === */
+.tech-item {
+  width: 110px;
+  height: 110px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.tech-item img {
+  width: 65px;
+  height: 65px;
+  filter: grayscale(20%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-8px) scale(1.12);
+  box-shadow: 0 12px 30px rgba(255, 214, 10, 0.35);
+  border: 1px solid rgba(255, 214, 10, 0.45);
+}
+
+.tech-item:hover img {
+  filter: brightness(1.15);
+  transform: scale(1.2);
+}
+
+/* Label under icons */
+#tech-name {
+  transition: opacity 0.3s ease;
+}
