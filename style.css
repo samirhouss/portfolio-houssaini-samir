@@ -24,7 +24,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* === Brand === */
 .brand {
   color: var(--text);
   transition: color var(--transition-fast);
@@ -34,7 +33,6 @@ body {
   color: var(--yellow);
 }
 
-/* === Header === */
 header {
   background: linear-gradient(180deg, rgba(0,0,0,0.95), rgba(0,0,0,0.92));
   border-bottom: 1px solid rgba(255,214,10,0.08);
@@ -42,7 +40,6 @@ header {
   transition: background var(--transition-smooth);
 }
 
-/* === Navigation === */
 .nav-link, .nav-link-mobile {
   color: var(--text);
   font-weight: 500;
@@ -70,7 +67,6 @@ header {
   transform: translateY(-2px);
 }
 
-/* === Boutons sociaux === */
 .social-btn {
   display: inline-flex;
   align-items: center;
@@ -91,7 +87,6 @@ header {
   box-shadow: 0 8px 24px rgba(255,214,10,0.2);
 }
 
-/* === Bouton primaire === */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -129,7 +124,6 @@ header {
   transform: translateY(-2px);
 }
 
-/* === Bouton outline === */
 .btn-outline {
   display: inline-flex;
   align-items: center;
@@ -164,7 +158,6 @@ header {
   border-color: rgba(255,214,10,0.3);
 }
 
-/* === Sections === */
 section {
   background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));
   border-radius: 12px;
@@ -172,7 +165,6 @@ section {
   box-shadow: 0 8px 40px rgba(0,0,0,0.6);
 }
 
-/* === Titres === */
 h1, h2, h3 {
   color: var(--yellow);
 }
@@ -184,7 +176,6 @@ h2 {
   color: var(--yellow);
 }
 
-/* === Cards === */
 .card, .project-card {
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border-radius: 12px;
@@ -199,7 +190,6 @@ h2 {
   border-color: rgba(255,214,10,0.2);
 }
 
-/* === Badge technologie (pour projets) === */
 .tech-badge {
   display: inline-block;
   padding: 0.25rem 0.6rem;
@@ -211,7 +201,6 @@ h2 {
   font-weight: 500;
 }
 
-/* === Formulaire === */
 input, textarea {
   background: rgba(255,255,255,0.03);
   border-radius: 8px;
@@ -232,18 +221,15 @@ input::placeholder, textarea::placeholder {
   color: var(--gray-400);
 }
 
-/* === Footer === */
 footer {
   border-top: 1px solid rgba(255,214,10,0.08);
 }
 
-/* === Focus visible (accessibilité) === */
 :focus-visible {
   outline: 3px solid rgba(255,214,10,0.3);
   outline-offset: 3px;
 }
 
-/* === Liens CTA === */
 .link-cta {
   color: var(--yellow);
   font-weight: 600;
@@ -256,7 +242,6 @@ footer {
   transform: translateX(4px);
 }
 
-/* === Items technologies === */
 .tech-item {
   width: 110px;
   height: 110px;
@@ -307,13 +292,11 @@ footer {
   transform: scale(1.15);
 }
 
-/* === Label technologie === */
 #tech-name {
   transition: opacity 0.3s ease;
   min-height: 1.5rem;
 }
 
-/* === Responsive === */
 @media (max-width: 768px) {
   section {
     margin: 1rem;
@@ -356,7 +339,6 @@ footer {
   }
 }
 
-/* === Animations === */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -372,7 +354,6 @@ footer {
   animation: fadeInUp 0.6s ease-out;
 }
 
-/* === Amélioration du contraste === */
 .text-gray-300 {
   color: var(--gray-300);
 }
@@ -381,13 +362,11 @@ footer {
   color: var(--gray-400);
 }
 
-/* === États de chargement === */
 .loading {
   opacity: 0.6;
   pointer-events: none;
 }
 
-/* === Messages de formulaire === */
 #form-message.success {
   color: #10B981;
   background: rgba(16, 185, 129, 0.1);
