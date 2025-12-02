@@ -4,70 +4,72 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Portfolio professionnel de HOUSSAINI Samir - Développeur Web (Front & Back).">
-  <meta name="keywords" content="développeur web, portfolio, HTML, CSS, JavaScript, Tailwind, React, Node.js">
+  <meta name="description"
+    content="HOUSSAINI Samir - Développeur Web Full-Stack spécialisé en Angular, Node.js et bases de données. Disponible en alternance dès janvier 2026.">
+  <meta name="keywords" content="développeur web, full-stack, Angular, Node.js, MySQL, alternance, Lyon">
   <meta name="author" content="HOUSSAINI Samir">
-  <title>HOUSSAINI Samir — Portfolio Développeur Web</title>
+  <title>HOUSSAINI Samir — Développeur Web Full-Stack</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="antialiased bg-black text-white">
 
-<header class="fixed top-0 left-0 right-0 z-50">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
-      <a href="#hero" class="flex items-center gap-3" aria-label="Aller à l'accueil">
-        <img src="samir.png" alt="Samir"
-          class="w-12 h-12 rounded-full object-cover shadow-md ring-2 ring-yellow-400/30">
-        <span class="font-bold text-xl brand">HOUSSAINI Samir</span>
-      </a>
-      <div class="hidden sm:flex items-center gap-4">
+  <header class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="#hero" class="flex items-center gap-3" aria-label="Retour à l'accueil">
+          <img src="samir.png" alt="Portrait de Samir HOUSSAINI"
+            class="w-12 h-12 rounded-full object-cover shadow-md ring-2 ring-yellow-400/30">
+          <span class="font-bold text-xl brand">HOUSSAINI Samir</span>
+        </a>
+
         <nav class="hidden md:flex items-center gap-6">
           <a class="nav-link text-base" href="#about">À propos</a>
           <a class="nav-link text-base" href="#skills">Compétences</a>
           <a class="nav-link text-base" href="#projects">Projets</a>
+          <a class="nav-link text-base" href="#contact">Contact</a>
         </nav>
-      </div>
-      <div class="flex items-center gap-4">
-        <div class="hidden md:flex items-center gap-3">
-          <a href="https://www.linkedin.com/in/samir-houssaini-9a920a2b4/" target="_blank" rel="noopener" class="social-btn text-2xl"
-            aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/samirhouss" target="_blank" rel="noopener" class="social-btn text-2xl"
-            aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
+
+        <div class="flex items-center gap-4">
+          <div class="hidden md:flex items-center gap-3">
+            <a href="https://www.linkedin.com/in/samir-houssaini-9a920a2b4/" target="_blank" rel="noopener"
+              class="social-btn text-2xl" aria-label="Profil LinkedIn de Samir HOUSSAINI">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/samirhouss" target="_blank" rel="noopener" class="social-btn text-2xl"
+              aria-label="Profil GitHub de Samir HOUSSAINI">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <button id="mobile-menu-button"
+            class="md:hidden p-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400"
+            aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars fa-xl"></i>
+          </button>
         </div>
-        <button id="mobile-menu-button"
-          class="md:hidden p-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400"
-          aria-label="Ouvrir le menu" aria-expanded="false">
-          <i class="fa-solid fa-bars fa-xl"></i>
-        </button>
       </div>
     </div>
-  </div>
-  <div id="mobile-menu" class="md:hidden border-t border-yellow-600/20 bg-black/95 hidden">
-    <div class="px-4 py-4 space-y-3">
-      <a href="#hero" class="block nav-link-mobile">Accueil</a>
-      <a href="#about" class="block nav-link-mobile">À propos</a>
-      <a href="#skills" class="block nav-link-mobile">Compétences</a>
-      <a href="#projects" class="block nav-link-mobile">Projets</a>
-      <a href="#contact" class="block nav-link-mobile">Contact</a>
-      <div class="flex items-center gap-3 pt-2">
-        <a href="https://www.linkedin.com/in/samir-houssaini-9a920a2b4/" target="_blank" rel="noopener" class="social-btn text-2xl"><i
-            class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/samirhouss" target="_blank" rel="noopener" class="social-btn text-2xl"><i
-            class="fab fa-github"></i></a>
-        <a href="cv.pdf" download class="btn-outline-mobile ml-auto">Télécharger CV</a>
+
+    <div id="mobile-menu" class="md:hidden border-t border-yellow-600/20 bg-black/95 hidden">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#hero" class="block nav-link-mobile">Accueil</a>
+        <a href="#about" class="block nav-link-mobile">À propos</a>
+        <a href="#skills" class="block nav-link-mobile">Compétences</a>
+        <a href="#projects" class="block nav-link-mobile">Projets</a>
+        <a href="#contact" class="block nav-link-mobile">Contact</a>
+        <div class="flex items-center gap-3 pt-2 flex-wrap">
+          <a href="https://www.linkedin.com/in/samir-houssaini-9a920a2b4/" target="_blank" rel="noopener"
+            class="social-btn text-2xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/samirhouss" target="_blank" rel="noopener" class="social-btn text-2xl"
+            aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="cv.pdf" download class="btn-outline-mobile ml-auto">CV</a>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
   <main class="pt-20">
     <section id="hero" class="min-h-[70vh] flex items-center">
@@ -75,33 +77,43 @@
         <div class="space-y-6">
           <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
             <span class="brand text-white">HOUSSAINI Samir</span><br>
-            Web Full-Stack Developper
+            Développeur Web Full-Stack
           </h1>
           <p class="text-lg text-gray-300 max-w-2xl">
-            Actuellement étudiant en pré-MSc Informatique (Bac+3), je suis à la recherche d’une alternance dans le
-            domaine IT à partir de janvier 2026, dans le cadre de la validation de mon cursus.
+            Étudiant en pré-MSc Informatique (Bac+3) spécialisé en développement web moderne.
+            Je recherche une alternance IT dès janvier 2026 pour concevoir des applications performantes et scalables.
           </p>
 
           <div class="flex flex-wrap gap-3">
-            <a href="#contact" class="btn-primary inline-flex items-center gap-2"><i
-                class="fa-solid fa-paper-plane"></i> Me contacter</a>
-            <a href="cv.pdf" class="btn-outline inline-flex items-center gap-2" download><i
-                class="fa-solid fa-file-arrow-down"></i> Mon CV</a>
+            <a href="#contact" class="btn-primary inline-flex items-center gap-2">
+              <i class="fa-solid fa-paper-plane"></i> Me contacter
+            </a>
+            <a href="cv.pdf" class="btn-outline inline-flex items-center gap-2" download>
+              <i class="fa-solid fa-file-arrow-down"></i> Télécharger CV
+            </a>
           </div>
 
           <div class="mt-6 space-y-2 text-sm text-gray-300">
-            <div class="flex items-center gap-3"><i class="fa-solid fa-envelope w-5"></i><a
-                href="mailto:samir.hssn84@gmail.com" class="underline">samir.hssn84@gmail.com</a></div>
-            <div class="flex items-center gap-3"><i class="fa-solid fa-phone w-5"></i><span>+33 6 03 95 66 21</span>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-envelope w-5"></i>
+              <a href="mailto:samir.hssn84@gmail.com" class="underline hover:text-yellow-400 transition">
+                samir.hssn84@gmail.com
+              </a>
             </div>
-            <div class="flex items-center gap-3"><i class="fa-solid fa-location-dot w-5"></i><span>Lyon, France</span>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-phone w-5"></i>
+              <a href="tel:+33603956621" class="hover:text-yellow-400 transition">+33 6 03 95 66 21</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-location-dot w-5"></i>
+              <span>Lyon, France</span>
             </div>
           </div>
         </div>
 
         <div class="flex justify-center md:justify-end">
-          <div class="w-64 h-64 rounded-full overflow-hidden shadow-2xl ring-4 ring-black/30">
-            <img src="samir.png" alt="Samir" class="w-full h-full object-cover">
+          <div class="w-64 h-64 rounded-full overflow-hidden shadow-2xl ring-4 ring-yellow-400/20">
+            <img src="samir.png" alt="Photo professionnelle de Samir HOUSSAINI" class="w-full h-full object-cover">
           </div>
         </div>
       </div>
@@ -111,25 +123,26 @@
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold mb-6">À propos</h2>
         <div class="grid md:grid-cols-3 gap-6">
-          <div class="md:col-span-2 text-gray-300">
-            <p class="mb-4">
-              Je souhaite mettre mes compétences au service de projets IT, alliant support technique, analyse de données
-              et optimisation des outils informatiques. Mon parcours m’a permis de développer une grande capacité
-              d’adaptation, un sens des responsabilités, ainsi qu’une pensée critique et une aptitude à résoudre
-              efficacement les problèmes. Sociable et autonome, je sais collaborer en équipe tout en gérant mes missions
-              avec rigueur et persévérance.
+          <div class="md:col-span-2 text-gray-300 space-y-4">
+            <p>
+              Développeur passionné par la création de solutions web robustes, je combine support technique,
+              analyse de données et optimisation pour répondre aux besoins IT des entreprises.
             </p>
-            <p class="mb-4">
-              Passion pour la qualité du code, les tests et l'optimisation des performances.
+            <p>
+              Mon approche repose sur l'adaptabilité, la résolution méthodique de problèmes et une collaboration
+              efficace en équipe.
+              Je privilégie la qualité du code, les tests rigoureux et l'amélioration continue des performances.
             </p>
-            <a href="#projects" class="link-cta">Voir mes projets →</a>
+            <a href="#projects" class="link-cta inline-block">Découvrir mes réalisations →</a>
           </div>
+
           <div class="p-6 rounded-lg bg-gradient-to-br from-black/60 to-gray-800 border border-yellow-600/20">
-            <h3 class="font-semibold text-yellow-400 mb-3 text-lg">Langues parlées</h3>
+            <h3 class="font-semibold text-yellow-400 mb-3 text-lg">Langues</h3>
             <ul class="text-base text-gray-300 space-y-2">
-              <li>Espagnol • Langue natale</li>
-              <li>Arabe • Langue maternelle</li>
-              <li>Anglais • Niveau B2</li>
+              <li>Français • Courant</li>
+              <li>Espagnol • Natif</li>
+              <li>Arabe • Maternel</li>
+              <li>Anglais • B2</li>
             </ul>
           </div>
         </div>
@@ -137,94 +150,127 @@
     </section>
 
     <section id="skills" class="py-14">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold mb-8">Compétences techniques</h2>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-8 text-center">Compétences techniques</h2>
 
         <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6 justify-items-center">
-
           <div class="tech-item" data-name="HTML5">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Logo HTML5">
           </div>
 
           <div class="tech-item" data-name="CSS3">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="Logo CSS3">
           </div>
 
           <div class="tech-item" data-name="JavaScript">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-              alt="JavaScript">
+              alt="Logo JavaScript">
           </div>
 
           <div class="tech-item" data-name="Python">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Logo Python">
           </div>
 
           <div class="tech-item" data-name="PHP">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="Logo PHP">
           </div>
 
           <div class="tech-item" data-name="Java">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Logo Java">
           </div>
 
           <div class="tech-item" data-name="Node.js">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Logo Node.js">
           </div>
 
           <div class="tech-item" data-name="Angular">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
-              alt="Angular">
+              alt="Logo Angular">
           </div>
 
           <div class="tech-item" data-name="MySQL">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="Logo MySQL">
           </div>
 
           <div class="tech-item" data-name="LabVIEW">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/labview/labview-original.svg" alt="LabVIEW">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/labview/labview-original.svg"
+              alt="Logo LabVIEW">
           </div>
 
           <div class="tech-item" data-name="GitHub">
-            <img src="https://img.icons8.com/ios11/512/FFFFFF/github.png" alt="GitHub">
+            <img src="https://img.icons8.com/ios11/512/FFFFFF/github.png" alt="Logo GitHub">
           </div>
 
           <div class="tech-item" data-name="Snowflake">
-            <img src="https://2679069.fs1.hubspotusercontent-na1.net/hubfs/2679069/SNOW-35164165.png" alt="Snowflake">
+            <img src="https://2679069.fs1.hubspotusercontent-na1.net/hubfs/2679069/SNOW-35164165.png"
+              alt="Logo Snowflake">
           </div>
         </div>
 
-        <p id="tech-name" class="mt-6 text-yellow-400 font-semibold text-lg h-6"></p>
+        <p id="tech-name" class="mt-6 text-yellow-400 font-semibold text-lg h-6 text-center" aria-live="polite"></p>
       </div>
     </section>
 
     <section id="projects" class="py-14">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold mb-6">Projets</h2>
+        <h2 class="text-3xl font-bold mb-6">Projets réalisés</h2>
         <div class="grid md:grid-cols-3 gap-6">
+
           <article class="project-card">
-            <img src="JobLife.png" alt="Projet 1" class="w-full h-40 object-cover rounded-t-lg">
+            <img src="JobLife.png" alt="Capture d'écran de la plateforme JobLife"
+              class="w-full h-40 object-cover rounded-t-lg">
             <div class="p-4">
-              <h3 class="font-semibold mb-2">JobLife Platform</h3>
-              <p class="text-gray-300 text-sm mb-3">Plateforme d'offre d'emploi complète avec Admin Pannel.</p>
-              <a href="https://gamma.app/docs/JobLife-Platform-vbl3zl4vyvk3khf" class="link-cta">Voir le projet →</a>
+              <h3 class="font-semibold mb-2 text-yellow-400">JobLife Platform</h3>
+              <p class="text-gray-300 text-sm mb-3">
+                Plateforme d'offres d'emploi avec panel d'administration complet.
+                Développée en Angular et Node.js, elle intègre un système de gestion des candidatures et
+                d'authentification sécurisée.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="tech-badge">Angular</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">MySQL</span>
+              </div>
+              <a href="https://gamma.app/docs/JobLife-Platform-vbl3zl4vyvk3khf" target="_blank" rel="noopener"
+                class="link-cta">
+                Voir le projet →
+              </a>
             </div>
           </article>
 
           <article class="project-card">
-            <img src="https://static.data.gouv.fr/images/75/9946080bd94962a51bd6feae96f8d9.png" alt="Projet 2" class="w-full h-40 object-cover rounded-t-lg">
+            <img src="https://static.data.gouv.fr/images/75/9946080bd94962a51bd6feae96f8d9.png"
+              alt="Carte des radars en France" class="w-full h-40 object-cover rounded-t-lg">
             <div class="p-4">
-              <h3 class="font-semibold mb-2">Data extract project (en cours)</h3>
-              <p class="text-gray-300 text-sm mb-3">Application web permettant de carthographier les différents types de radars en France.</p>
-              <a href="#" class="link-cta">Voir le projet →</a>
+              <h3 class="font-semibold mb-2 text-yellow-400">Cartographie des radars</h3>
+              <p class="text-gray-300 text-sm mb-3">
+                Application web cartographiant les radars français avec filtrage par type et visualisation interactive.
+                Utilise l'API data.gouv.fr pour extraire et afficher les données géolocalisées.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="tech-badge">MySQL</span>
+                <span class="tech-badge">ETL</span>
+                <span class="tech-badge">Snowflake</span>
+                <span class="tech-badge">Python</span>
+              </div>
+              <span class="text-gray-400 text-sm italic">En cours de développement</span>
             </div>
           </article>
 
           <article class="project-card">
-            <img src="dung.png" alt="Projet 3" class="w-full h-40 object-cover rounded-t-lg">
+            <img src="dung.png" alt="Aperçu du jeu vidéo inspiré de Vampire Survivors"
+              class="w-full h-40 object-cover rounded-t-lg">
             <div class="p-4">
-              <h3 class="font-semibold mb-2">Jeu vidéo (en cours)</h3>
-              <p class="text-gray-300 text-sm mb-3">Conception d’un jeu vidéo reprenant les mécaniques de Vampire Survivors.</p>
-              <a href="#" class="link-cta">Voir le projet →</a>
+              <h3 class="font-semibold mb-2 text-yellow-400">Roguelike 2D</h3>
+              <p class="text-gray-300 text-sm mb-3">
+                Jeu vidéo reprenant les mécaniques de Vampire Survivors avec génération procédurale,
+                système de progression et gestion d'hordes d'ennemis.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Game Design</span>
+              </div>
+              <span class="text-gray-400 text-sm italic">En cours de développement</span>
             </div>
           </article>
         </div>
@@ -233,61 +279,75 @@
 
     <section id="contact" class="py-14">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold mb-6">Contact</h2>
-        <p class="text-gray-300 mb-6">Remplissez ce formulaire si vous avez pour but de m'envoyer un message.</p>
+        <h2 class="text-3xl font-bold mb-6">Me contacter</h2>
+        <p class="text-gray-300 mb-6">
+          Une question ou une opportunité d'alternance ? Remplissez ce formulaire pour me contacter directement.
+        </p>
 
         <form id="contact-form" class="space-y-4 bg-gray-900 p-6 rounded-lg border border-yellow-600/15">
           <div>
-            <label for="name" class="block text-sm font-medium text-gray-300">Nom complet</label>
-            <input id="name" name="name" required
-              class="mt-1 block w-full rounded-lg bg-black/60 border border-transparent px-3 py-2 focus:ring-2 focus:ring-yellow-400" />
-          </div>
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
-            <input id="email" name="email" type="email" required
-              class="mt-1 block w-full rounded-lg bg-black/60 border border-transparent px-3 py-2 focus:ring-2 focus:ring-yellow-400" />
-          </div>
-          <div>
-            <label for="subject" class="block text-sm font-medium text-gray-300">Sujet</label>
-            <input id="subject" name="subject" required
-              class="mt-1 block w-full rounded-lg bg-black/60 border border-transparent px-3 py-2 focus:ring-2 focus:ring-yellow-400" />
-          </div>
-          <div>
-            <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
-            <textarea id="message" name="message" rows="6" required
-              class="mt-1 block w-full rounded-lg bg-black/60 border border-transparent px-3 py-2 focus:ring-2 focus:ring-yellow-400"></textarea>
+            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nom complet</label>
+            <input id="name" name="name" type="text" required
+              class="mt-1 block w-full rounded-lg bg-black/60 border border-transparent px-3 py-2 focus:ring-2 focus:ring-yellow-400"
+              placeholder="Jean Dupont" />
           </div>
 
-          <div class="flex items-center gap-3">
-            <button type="submit" class="btn-primary inline-flex items-center gap-2"><i
-                class="fa-solid fa-paper-plane"></i> Envoyer</button>
-            <button type="button" id="mailto-btn" class="btn-outline inline-flex items-center gap-2 hidden"><i
-                class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir mail</button>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Adresse e-mail</label>
+            <input id="email" name="email" type="email" required
+              class="mt-1 block w-full rounded-lg bg-black/60 border border-transparent px-3 py-2 focus:ring-2 focus:ring-yellow-400"
+              placeholder="jean.dupont@exemple.fr" />
+          </div>
+
+          <div>
+            <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Sujet</label>
+            <input id="subject" name="subject" type="text" required
+              class="mt-1 block w-full rounded-lg bg-black/60 border border-transparent px-3 py-2 focus:ring-2 focus:ring-yellow-400"
+              placeholder="Opportunité d'alternance" />
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+            <textarea id="message" name="message" rows="6" required
+              class="mt-1 block w-full rounded-lg bg-black/60 border border-transparent px-3 py-2 focus:ring-2 focus:ring-yellow-400"
+              placeholder="Décrivez votre demande..."></textarea>
+          </div>
+
+          <div class="flex items-center gap-3 flex-wrap">
+            <button type="submit" class="btn-primary inline-flex items-center gap-2">
+              <i class="fa-solid fa-paper-plane"></i> Envoyer le message
+            </button>
+            <button type="button" id="mailto-btn" class="btn-outline inline-flex items-center gap-2 hidden">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Ouvrir mail
+            </button>
             <a href="cv.pdf" download class="btn-outline ml-auto">Télécharger CV</a>
           </div>
 
-          <div id="form-message" class="mt-3 text-sm hidden"></div>
+          <div id="form-message" class="mt-3 text-sm hidden" role="alert" aria-live="polite"></div>
         </form>
       </div>
     </section>
 
-    <footer class="py-8">
+    <footer class="py-8 border-t border-yellow-600/10">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="mb-3 text-gray-400"> <span id="year"></span> HOUSSAINI Samir. Tous droits réservés.</p>
+        <p class="mb-3 text-gray-400">
+          <span id="year"></span> HOUSSAINI Samir. Tous droits réservés.
+        </p>
         <div class="flex justify-center gap-6">
-          <a href="https://www.linkedin.com/in/samir-houssaini-9a920a2b4/" target="_blank" rel="noopener" class="social-btn"
-            aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+          <a href="https://www.linkedin.com/in/samir-houssaini-9a920a2b4/" target="_blank" rel="noopener"
+            class="social-btn" aria-label="Profil LinkedIn">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
           <a href="https://github.com/samirhouss" target="_blank" rel="noopener" class="social-btn"
-            aria-label="GitHub"><i class="fab fa-github fa-2x"></i></a>
+            aria-label="Profil GitHub">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
         </div>
       </div>
     </footer>
-
   </main>
 
-
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
   <script src="script.js"></script>
 </body>
 
