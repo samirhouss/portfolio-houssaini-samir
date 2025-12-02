@@ -1,4 +1,3 @@
-// ===== INITIALISATION =====
 document.addEventListener('DOMContentLoaded', () => {
   initYear();
   initMobileMenu();
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccessibility();
 });
 
-// ===== ANNÉE DANS LE FOOTER =====
 function initYear() {
   const yearEl = document.getElementById('year');
   if (yearEl) {
@@ -17,7 +15,6 @@ function initYear() {
   }
 }
 
-// ===== MENU MOBILE =====
 function initMobileMenu() {
   const mobileBtn = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -29,7 +26,6 @@ function initMobileMenu() {
     mobileMenu.classList.toggle('hidden');
     mobileBtn.setAttribute('aria-expanded', String(!isOpen));
     
-    // Changement d'icône
     const icon = mobileBtn.querySelector('i');
     if (icon) {
       icon.classList.toggle('fa-bars');
@@ -37,7 +33,6 @@ function initMobileMenu() {
     }
   });
 
-  // Fermeture avec Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
       mobileMenu.classList.add('hidden');
@@ -51,7 +46,6 @@ function initMobileMenu() {
   });
 }
 
-// ===== SMOOTH SCROLL =====
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
@@ -64,7 +58,6 @@ function initSmoothScroll() {
       if (target) {
         e.preventDefault();
         
-        // Offset pour le header fixe
         const headerOffset = 80;
         const elementPosition = target.getBoundingClientRect().top + window.scrollY;
         const offsetPosition = elementPosition - headerOffset;
@@ -74,7 +67,7 @@ function initSmoothScroll() {
           behavior: 'smooth'
         });
 
-        // Fermeture du menu mobile si ouvert
+
         const mobileMenu = document.getElementById('mobile-menu');
         if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
           mobileMenu.classList.add('hidden');
@@ -89,7 +82,6 @@ function initSmoothScroll() {
           }
         }
 
-        // Focus sur la cible pour l'accessibilité
         setTimeout(() => {
           target.focus({ preventScroll: true });
         }, 500);
@@ -98,7 +90,6 @@ function initSmoothScroll() {
   });
 }
 
-// ===== HOVER SUR LES TECHNOLOGIES =====
 function initTechHover() {
   const techItems = document.querySelectorAll('.tech-item');
   const techName = document.getElementById('tech-name');
@@ -116,7 +107,7 @@ function initTechHover() {
 
     item.addEventListener('mouseleave', () => {
       techName.style.opacity = '0';
-      // Reset après transition
+
       setTimeout(() => {
         if (techName.style.opacity === '0') {
           techName.textContent = '';
@@ -124,7 +115,6 @@ function initTechHover() {
       }, 300);
     });
 
-    // Accessibilité clavier
     item.setAttribute('tabindex', '0');
     item.addEventListener('focus', () => {
       const name = item.dataset.name;
@@ -140,7 +130,6 @@ function initTechHover() {
   });
 }
 
-// ===== EMAILJS INITIALISATION =====
 function initEmailJS() {
   if (typeof emailjs !== 'undefined') {
     emailjs.init({
@@ -152,7 +141,6 @@ function initEmailJS() {
   }
 }
 
-// ===== FORMULAIRE DE CONTACT =====
 function initContactForm() {
   const contactForm = document.getElementById('contact-form');
   const formMessage = document.getElementById('form-message');
@@ -160,7 +148,6 @@ function initContactForm() {
 
   if (!contactForm || !formMessage) return;
 
-  // Bouton mailto alternatif
   if (mailtoBtn) {
     mailtoBtn.addEventListener('click', () => {
       const name = document.getElementById('name')?.value || '';
@@ -176,16 +163,13 @@ function initContactForm() {
     });
   }
 
-  // Soumission du formulaire
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
-    // Reset du message
+
     formMessage.classList.remove('hidden', 'success', 'error', 'info');
     formMessage.classList.add('info');
     formMessage.textContent = 'Envoi en cours...';
 
-    // Vérification d'EmailJS
     if (typeof emailjs === 'undefined') {
       console.error('EmailJS non disponible');
       showFormMessage('EmailJS non disponible. Utilisez le bouton "Ouvrir mail" ci-dessous.', 'error');
@@ -193,7 +177,6 @@ function initContactForm() {
       return;
     }
 
-    // Récupération des données
     const templateParams = {
       from_name: document.getElementById('name')?.value || '',
       from_email: document.getElementById('email')?.value || '',
@@ -201,20 +184,17 @@ function initContactForm() {
       message: document.getElementById('message')?.value || ''
     };
 
-    // Validation basique
     if (!templateParams.from_name || !templateParams.from_email || !templateParams.message) {
       showFormMessage('Veuillez remplir tous les champs obligatoires.', 'error');
       return;
     }
 
-    // Validation email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(templateParams.from_email)) {
       showFormMessage('Veuillez entrer une adresse e-mail valide.', 'error');
       return;
     }
 
-    // Désactivation du formulaire pendant l'envoi
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     if (submitBtn) {
       submitBtn.disabled = true;
@@ -231,11 +211,9 @@ function initContactForm() {
       console.log('Email envoyé avec succès', response.status, response.text);
       
       showFormMessage('Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.', 'success');
-      
-      // Reset du formulaire
+
       contactForm.reset();
       
-      // Masquage du bouton mailto
       if (mailtoBtn) mailtoBtn.classList.add('hidden');
 
     } catch (error) {
@@ -246,11 +224,9 @@ function initContactForm() {
         'error'
       );
       
-      // Affichage du bouton mailto
       if (mailtoBtn) mailtoBtn.classList.remove('hidden');
       
     } finally {
-      // Réactivation du bouton
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.classList.remove('loading');
@@ -259,7 +235,6 @@ function initContactForm() {
   });
 }
 
-// ===== AFFICHAGE DES MESSAGES DE FORMULAIRE =====
 function showFormMessage(message, type) {
   const formMessage = document.getElementById('form-message');
   if (!formMessage) return;
@@ -267,13 +242,11 @@ function showFormMessage(message, type) {
   formMessage.classList.remove('hidden', 'success', 'error', 'info');
   formMessage.classList.add(type);
   formMessage.textContent = message;
-  
-  // Scroll vers le message si nécessaire
+
   setTimeout(() => {
     formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, 100);
 
-  // Auto-masquage des messages de succès après 10s
   if (type === 'success') {
     setTimeout(() => {
       formMessage.classList.add('hidden');
@@ -281,14 +254,11 @@ function showFormMessage(message, type) {
   }
 }
 
-// ===== ACCESSIBILITÉ =====
 function initAccessibility() {
-  // Rendre les sections focusables pour la navigation clavier
   document.querySelectorAll('section[id]').forEach(section => {
     section.setAttribute('tabindex', '-1');
   });
 
-  // Gestion du focus visible
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Tab') {
       document.body.classList.add('using-keyboard');
@@ -299,7 +269,6 @@ function initAccessibility() {
     document.body.classList.remove('using-keyboard');
   });
 
-  // Skip to main content (si besoin d'ajouter un lien dans le HTML)
   const skipLink = document.querySelector('a[href="#main"]');
   if (skipLink) {
     skipLink.addEventListener('click', (e) => {
@@ -313,7 +282,6 @@ function initAccessibility() {
   }
 }
 
-// ===== AMÉLIORATION: LAZY LOADING DES IMAGES =====
 if ('IntersectionObserver' in window) {
   const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -333,7 +301,6 @@ if ('IntersectionObserver' in window) {
   });
 }
 
-// ===== AMÉLIORATION: DÉTECTION DU SCROLL POUR LE HEADER =====
 let lastScroll = 0;
 const header = document.querySelector('header');
 
@@ -342,10 +309,8 @@ window.addEventListener('scroll', () => {
 
   if (header) {
     if (currentScroll > lastScroll && currentScroll > 100) {
-      // Scroll vers le bas - masquer le header
       header.style.transform = 'translateY(-100%)';
     } else {
-      // Scroll vers le haut - afficher le header
       header.style.transform = 'translateY(0)';
     }
   }
@@ -353,7 +318,6 @@ window.addEventListener('scroll', () => {
   lastScroll = currentScroll;
 });
 
-// ===== AMÉLIORATION: ANIMATION AU SCROLL =====
 if ('IntersectionObserver' in window) {
   const animObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -371,7 +335,6 @@ if ('IntersectionObserver' in window) {
   });
 }
 
-// ===== UTILITIES: DEBOUNCE =====
 function debounce(func, wait) {
   let timeout;
   return function executedFunction(...args) {

@@ -1,4 +1,4 @@
-/* === Palette de couleurs === */
+
 :root {
   --bg: #000000;
   --text: #F8FAFC;
@@ -10,7 +10,6 @@
   --transition-smooth: 0.28s ease;
 }
 
-/* === Base === */
 html, body {
   height: 100%;
   scroll-behavior: smooth;
